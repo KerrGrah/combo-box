@@ -18,5 +18,6 @@ yarn-debug.log*
 yarn-error.log*
 yarn.lock
 
-./src/registerServiceWorker.js
-./build/service-worker.js
+/build
+/src/registerServiceWorker.js
+/build/service-worker.js

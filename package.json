@@ -18,7 +18,13 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "node serve.js"
+    "start": "node serve.js",
+    "start": "npm-run-all -p styles start-js",
+    "start-js": "react-scripts start",
+    "styles": "stylus -w ./src/style.styl -o ./src/style.css",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "css-loader": "^0.28.9",

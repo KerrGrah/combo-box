@@ -1,6 +1,0 @@
-"start": "npm-run-all -p styles start-js",
-"start-js": "react-scripts start",
-"styles": "stylus -w ./src/style.styl -o ./src/style.css",
-"build": "react-scripts build",
-"test": "react-scripts test --env=jsdom",
-"eject": "react-scripts eject"

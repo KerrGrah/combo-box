@@ -1,0 +1,151 @@
+body
+  height: 80vh
+  margin: 0
+  padding: 0
+  font-family: sans-serif
+
+.select
+  margin: 0 auto
+  margin-top: 60vh
+  padding: 40px
+  width: 300px
+  height: 100px
+  text-align: center
+  position: relative
+  background: #fff
+
+  &__label-arrow-container
+    position: relative
+    top: 32px
+    margin: 0 auto
+    width: 260px
+    pointer-events: none
+    transition: transform 300ms ease
+
+    &_focus
+      cursor: default
+      font-size: 14px
+      transform: translate(0,-24px)
+
+      & .select__arrow
+        opacity: 0
+
+    &_hidden
+      opacity: 0
+
+  &__label
+    position: relative
+    display: inline
+    cursor: text
+    font-size: 14px
+    font-weight: 200
+    width: 110px
+    padding: 0 10px
+    background: #fff
+    color: #434343
+    margin-right: 45px
+
+  &__arrow
+    display: inline
+    padding: 0 10px
+    margin-left: 45px
+    color: #82848E
+
+  &__text
+    box-sizing: border-box
+    width: 260px
+    height: 46px
+    border: 1px solid #ccc
+    border-radius: 6px;
+    font-size: 20px
+    font-weight: 200
+    padding: 10px;
+    box-shadow: none
+
+    &_focus
+      outline: none
+      border-radius: 6px 6px 0 0
+
+    &_content-above
+      border-radius: 0 0 6px 6px
+
+  .desktop-list
+    position: absolute
+    z-index: 999
+    left: 50%
+    transform: translate(-50%, 0)
+    text-align: left
+    box-sizing: border-box
+    background: #fff
+    color: #434343
+    width: 260px
+    max-height: 0
+    overflow: hidden
+
+    p, span
+      margin: 0
+      padding: 0
+
+    &_visible
+      max-height: 260px
+      border: 1px solid #ccc
+      border-top: none
+      border-radius: 0 0 6px 6px;
+      overflow: scroll
+
+    &__item
+      font-weight: 200
+      font-size: 16px
+      padding: 12px
+      transition: background 100ms
+
+      &:hover, &_focus
+        cursor: pointer
+        background: #eee
+
+      &_highlight
+        color: orange
+
+    &_visble, &_above
+      bottom: 69%
+      border-top: 1px solid #ccc
+      border-bottom: none
+      border-radius: 6px 6px 0 0;
+
+  &__user-selected-country
+    color: orange
+
+
+.select-mobile
+  @extends .select
+
+  &__label-arrow-container_hidden
+    opacity: 0
+
+  &__text
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    z-index: 999
+    pointer-events: none
+    display: block
+    margin: 0 auto
+
+  & .native-mobile-select
+    box-sizing: border-box
+    width: 260px
+    height: 46px
+    position: relative
+    z-index: 1
+    display: block
+    margin: 0 auto
+    bottom: 46px
+    opacity: 0
+
+  &__user-selected-country
+    @extends .select__user-selected-country
+    margin-top: -20px
+
+// prevents zoom on ios
+select, select:focus
+  font-size 16px
